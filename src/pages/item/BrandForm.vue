@@ -68,11 +68,11 @@
           // 将字母都处理为大写
           params.letter = letter.toUpperCase();
           // 将数据提交到后台
-          // this.$http.post('/item/brand', this.$qs.stringify(params))
+           // this.$http.post('/item/brand', this.$qs.stringify(params))
           this.$http({
             method: this.isEdit ? 'put' : 'post',
             url: '/item/brand',
-            data: params
+            data: this.$qs.stringify(params)
           }).then(() => {
             // 关闭窗口
             this.$emit("close");
